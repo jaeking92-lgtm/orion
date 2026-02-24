@@ -325,7 +325,7 @@ textarea {
 ========================================= */
 .pd {
     --inner_w: var(--inner_1784);
-
+    overflow: hidden;
     position: relative;
     background: #fff;
 
