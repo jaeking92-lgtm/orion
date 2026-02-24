@@ -1,0 +1,228 @@
+/* =========================
+  Header (inner 통일 + 요청 높이)
+  - hd_t : 70px
+  - hd(메뉴바) : 62px
+  - hd_nv : 62px
+  - 메뉴 + 아이콘 : inner 안에서 space-between
+========================= */
+
+.hd_t {
+    background: #111;
+}
+
+.hd_t .inner {
+    width: 1920px;
+    height: 70px;
+    margin: 0 auto;
+    padding: 0 68px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: stretch;
+}
+
+.hd_t .hd_lg {
+    display: inline-flex;
+    align-items: stretch;
+    gap: 0;
+    width: 546px;
+    height: 100%;
+}
+
+/* heading margin reset */
+.hd_t h1,
+.hd_t h2 {
+    margin: 0;
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ORION block */
+.hd_t h1 {
+    background: #fff;
+    padding: 0 18px;
+    border-radius: 0 0 16px 16px;
+}
+
+/* Market O / Dr.You blocks */
+.hd_t h2:nth-of-type(1) {
+    background: #6b3f13;
+    padding: 0 18px;
+}
+
+.hd_t h2:nth-of-type(2) {
+    background: #0a7f7b;
+    padding: 0 18px;
+}
+
+.hd_lg_img,
+.hd_sulg_img {
+    display: block;
+    height: 26px;
+    width: auto;
+}
+
+/* =========================
+  Nav bar (62px)
+========================= */
+
+.hd {
+    background: #fff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: relative;
+    z-index: 900;
+}
+
+.hd>.inner {
+    width: 1920px;
+    height: 62px;
+    margin: 0 auto;
+    padding: 0 68px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* ✅ 요청: space-between */
+}
+
+/* ✅ nav 자체도 62px로 */
+.hd_nv {
+    height: 62px;
+    display: flex;
+    align-items: center;
+}
+
+.hd_g {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: inline-flex;
+    align-items: center;
+    gap: 56px;
+}
+
+.hd_btn {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    height: 62px;
+    /* ✅ 클릭 영역도 62 */
+    display: inline-flex;
+    align-items: center;
+
+    font-size: 14px;
+    font-weight: 600;
+    color: #111;
+    letter-spacing: -0.02em;
+}
+
+.hd_btn:hover {
+    color: rgba(0, 0, 0, 0.65);
+}
+
+/* ✅ 아이콘도 inner 흐름 안으로 (absolute 제거) */
+.hd_ac {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.hd_ic {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    width: 34px;
+    height: 34px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 20px;
+    color: #111;
+}
+
+/* =========================
+  Dropdown
+========================= */
+
+.hd_dd {
+    display: none;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+
+    background: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+
+    padding: 26px 0 34px;
+}
+
+.hd.is-open .hd_dd {
+    display: block;
+}
+
+.hd_dd .inner {
+    width: 1920px;
+    margin: 0 auto;
+    padding: 0 68px;
+    box-sizing: border-box;
+}
+
+/* 각 메뉴 패널 */
+.hd_mn {
+    display: none;
+    gap: 70px;
+    align-items: flex-start;
+}
+
+.hd_mn.is-active {
+    display: flex;
+}
+
+.hd_col {
+    min-width: 160px;
+}
+
+.hd_ct {
+    font-size: 13px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.hd_ct_br {
+    font-weight: 900;
+}
+
+.hd_lk {
+    display: block;
+    font-size: 12px;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 6px 0;
+}
+
+.hd_lk:hover {
+    color: rgba(0, 0, 0, 0.95);
+}
+
+.hd_2c {
+    display: flex;
+    gap: 28px;
+}
+
+.hd_2c_in {
+    display: flex;
+    flex-direction: column;
+}

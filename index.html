@@ -1,0 +1,607 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="keywords" content="오리온, orion, 제과, 간식" />
+    <meta name="author" content="JaeHyuk" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orion</title>
+
+    <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet" />
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet" />
+    <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/common.css" />
+
+    <script src="js/common.js" defer></script>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <!-- HEADER -->
+        <header class="hd" id="hd">
+            <!-- top bar (70px) -->
+            <div class="hd_t">
+                <div class="hd_t_bg">
+                    <a class="hd_lg" href="./index.html" aria-label="ORION 홈">
+                        <img class="hd_lg_img" src="./img/logo_orion.png" alt="오리온" />
+                    </a>
+
+                    <div class="hd_brand">
+                        <img class="hd_brand_img" src="./img/logo_market.png" alt="마켓오" />
+                        <img class="hd_brand_img" src="./img/logo_dr.png" alt="닥터유" />
+                    </div>
+                </div>
+            </div>
+
+            <!-- nav bar (62px) -->
+            <div class="hd_nv">
+                <div class="inner">
+                    <nav class="hd_nav" aria-label="주요 메뉴">
+                        <ul class="hd_g">
+                            <li class="hd_it" data_key="m1">
+                                <button class="hd_btn" type="button" data_key="m1">뉴스룸</button>
+                            </li>
+                            <li class="hd_it" data_key="m2">
+                                <button class="hd_btn" type="button" data_key="m2">오리온</button>
+                            </li>
+                            <li class="hd_it" data_key="m3">
+                                <button class="hd_btn" type="button" data_key="m3">브랜드</button>
+                            </li>
+                            <li class="hd_it" data_key="m4">
+                                <button class="hd_btn" type="button" data_key="m4">고객센터</button>
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <div class="hd_ac">
+                        <button class="hd_ic" type="button" aria-label="검색">
+                            <i class="bx bx-search bx-remove-padding"></i>
+                        </button>
+                        <button class="hd_ic" type="button" aria-label="회원">
+                            <i class="bx bx-user bx-remove-padding"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- dropdown -->
+            <div class="hd_dd" id="hd_dd" aria-hidden="true">
+                <div class="inner">
+                    <!-- 뉴스룸 -->
+                    <div class="hd_mn" data_key="m1">
+                        <div class="hd_col">
+                            <div class="hd_ct">회사소개</div>
+                            <a class="hd_lk" href="#">회사개요</a>
+                            <a class="hd_lk" href="#">비전</a>
+                            <a class="hd_lk" href="#">연혁</a>
+                            <a class="hd_lk" href="#">CI</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">사업분야</div>
+                            <a class="hd_lk" href="#">사업 영역</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">지속가능경영</div>
+                            <a class="hd_lk" href="#">ESG</a>
+                            <a class="hd_lk" href="#">준법</a>
+                            <a class="hd_lk" href="#">윤리경영</a>
+                            <a class="hd_lk" href="#">사회공헌</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">IR</div>
+                            <a class="hd_lk" href="#">투자정보</a>
+                            <a class="hd_lk" href="#">공시</a>
+                            <a class="hd_lk" href="#">재무</a>
+                        </div>
+                    </div>
+
+                    <!-- 오리온 -->
+                    <div class="hd_mn" data_key="m2">
+                        <div class="hd_col">
+                            <div class="hd_ct hd_ct_br">ORION</div>
+                            <div class="hd_2c">
+                                <div class="hd_2c_in">
+                                    <a class="hd_lk" href="#">신제품</a>
+                                    <a class="hd_lk" href="#">스낵</a>
+                                    <a class="hd_lk" href="#">캔디</a>
+                                    <a class="hd_lk" href="#">껌</a>
+                                    <a class="hd_lk" href="#">비스킷</a>
+                                </div>
+                                <div class="hd_2c_in">
+                                    <a class="hd_lk" href="#">초콜릿</a>
+                                    <a class="hd_lk" href="#">파이</a>
+                                    <a class="hd_lk" href="#">마켓오</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct hd_ct_br">Dr.You</div>
+                            <a class="hd_lk" href="#">음료/파우더</a>
+                            <a class="hd_lk" href="#">스낵</a>
+                            <a class="hd_lk" href="#">영양/단백</a>
+                            <a class="hd_lk" href="#">바/젤</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct hd_ct_br">Market O</div>
+                            <a class="hd_lk" href="#">오 그래놀라</a>
+                            <a class="hd_lk" href="#">오 그래놀라 바</a>
+                        </div>
+                    </div>
+
+                    <!-- 브랜드 -->
+                    <div class="hd_mn" data_key="m3">
+                        <div class="hd_col">
+                            <div class="hd_ct">보도자료</div>
+                            <a class="hd_lk" href="#">보도자료</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">오리온 소식</div>
+                            <a class="hd_lk" href="#">진행중 이벤트</a>
+                            <a class="hd_lk" href="#">글로벌 푸드</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">미디어</div>
+                            <a class="hd_lk" href="#">미디어</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">브랜드 뉴스</div>
+                            <a class="hd_lk" href="#">브랜드 뉴스</a>
+                        </div>
+                    </div>
+
+                    <!-- 고객센터 -->
+                    <div class="hd_mn" data_key="m4">
+                        <div class="hd_col">
+                            <div class="hd_ct">자주 묻는 질문(FAQ)</div>
+                            <a class="hd_lk" href="#">제품</a>
+                            <a class="hd_lk" href="#">표기</a>
+                            <a class="hd_lk" href="#">기타</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">1:1 문의/상담</div>
+                            <a class="hd_lk" href="#">1:1 문의/상담</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">신고/제보</div>
+                            <a class="hd_lk" href="#">신고/제보</a>
+                        </div>
+
+                        <div class="hd_col">
+                            <div class="hd_ct">자료실</div>
+                            <a class="hd_lk" href="#">자료실</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <!-- MAIN VISUAL -->
+        <section class="mv" id="mv">
+            <div class="inner">
+                <img class="mv_bg" src="./img/main_visual.jpg" alt="메인 비주얼" />
+                <div class="mv_tx">
+                    <p class="mv_tx1">오랜 시간, 변하지 않는 기준<br />세대를 잇는 오리온의 이름</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PRODUCT SLIDER -->
+        <section class="pd" id="pd">
+            <div class="inner">
+
+                <div class="pd_hd">
+                    <h2 class="pd_t">매일이 새로운 오리온 제품</h2>
+                    <a class="pd_more" href="#">more+</a>
+                </div>
+
+                <div class="pd_slider" aria-label="제품 슬라이더">
+
+                    <article class="pd_it pd_it_s">
+                        <a class="pd_card pd_card_s" href="#">
+                            <img class="pd_img" src="./img/pd_1.png" alt="마이구미" />
+                        </a>
+                        <p class="pd_nm">마이구미</p>
+                    </article>
+
+                    <article class="pd_it pd_it_s">
+                        <a class="pd_card pd_card_s" href="#">
+                            <img class="pd_img" src="./img/pd_2.png" alt="오!감자" />
+                        </a>
+                        <p class="pd_nm">오!감자</p>
+                    </article>
+
+                    <article class="pd_it pd_it_m">
+                        <button class="pd_ar pd_ar_l" type="button" aria-label="이전">
+                            <span class="pd_ar_ico" aria-hidden="true"></span>
+                        </button>
+
+                        <a class="pd_card pd_card_m" href="#">
+                            <img class="pd_img" src="./img/pd_3.png" alt="초코파이" />
+                        </a>
+
+                        <button class="pd_ar pd_ar_r" type="button" aria-label="다음">
+                            <span class="pd_ar_ico" aria-hidden="true"></span>
+                        </button>
+
+                        <p class="pd_nm">초코파이</p>
+                    </article>
+
+                    <article class="pd_it pd_it_s">
+                        <a class="pd_card pd_card_s" href="#">
+                            <img class="pd_img" src="./img/pd_4.png" alt="다이제" />
+                        </a>
+                        <p class="pd_nm">다이제</p>
+                    </article>
+
+                    <article class="pd_it pd_it_s">
+                        <a class="pd_card pd_card_s" href="#">
+                            <img class="pd_img" src="./img/pd_5.png" alt="포카칩" />
+                        </a>
+                        <p class="pd_nm">포카칩</p>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- BANNER (1200x300) -->
+        <section class="cs_bn" aria-label="프로모션 배너">
+            <div class="inner">
+                <a class="cs_bn_a" href="#">
+                    <img class="cs_bn_i" src="./img/banner_1200_300.jpg" alt="프로모션 배너" />
+                </a>
+            </div>
+        </section>
+
+
+        <!-- 5 CARDS -->
+        <section class="cs" id="cs">
+            <div class="inner">
+                <div class="cs_r">
+                    <a class="cs_it cs_it1" href="#"><span class="cs_tx">윤리 경영</span></a>
+                    <a class="cs_it cs_it2" href="#"><span class="cs_tx">제품 소개</span></a>
+                    <a class="cs_it cs_it3" href="#"><span class="cs_tx">제품 연혁</span></a>
+                </div>
+
+                <div class="cs_r">
+                    <a class="cs_it cs_it4" href="#"><span class="cs_tx">뉴스룸</span></a>
+                    <a class="cs_it cs_it5" href="#"><span class="cs_tx">회사소개</span></a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- BEST RANK -->
+        <section class="br" id="br">
+            <div class="inner">
+
+                <div class="br_w">
+
+                    <div class="br_lc">
+                        <h2 class="br_t">오리온<br />BEST 제품</h2>
+
+                        <ul class="br_l" id="br_l">
+                            <li class="br_it">
+                                <button class="br_btn" type="button">
+                                    <span class="br_no">1</span>
+                                    <span class="br_nm">초코파이 情</span>
+                                </button>
+                                <a class="br_mo" href="#">more+</a>
+
+                                <div class="br_pn">
+                                    <div class="br_pn_in">
+                                        <div class="br_g">
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_1_1.png"
+                                                    alt="초코파이 情" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_1_2.png"
+                                                    alt="초코파이 情" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="br_it isOn">
+                                <button class="br_btn" type="button">
+                                    <span class="br_no">2</span>
+                                    <span class="br_nm">포카칩</span>
+                                </button>
+                                <a class="br_mo" href="#">more+</a>
+
+                                <div class="br_pn">
+                                    <div class="br_pn_in">
+                                        <div class="br_g">
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_2_1.png"
+                                                    alt="포카칩 오리지널" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_2_2.png"
+                                                    alt="포카칩 어니언" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_2_3.png"
+                                                    alt="포카칩 MAX" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="br_it">
+                                <button class="br_btn" type="button">
+                                    <span class="br_no">3</span>
+                                    <span class="br_nm">고북칩</span>
+                                </button>
+                                <a class="br_mo" href="#">more+</a>
+
+                                <div class="br_pn">
+                                    <div class="br_pn_in">
+                                        <div class="br_g">
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_3_1.png"
+                                                    alt="고북칩" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_3_2.png"
+                                                    alt="고북칩" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_3_3.png"
+                                                    alt="고북칩" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="br_it">
+                                <button class="br_btn" type="button">
+                                    <span class="br_no">4</span>
+                                    <span class="br_nm">오!감자</span>
+                                </button>
+                                <a class="br_mo" href="#">more+</a>
+
+                                <div class="br_pn">
+                                    <div class="br_pn_in">
+                                        <div class="br_g">
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_4_1.png"
+                                                    alt="오!감자" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_4_2.png"
+                                                    alt="오!감자" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_4_3.png"
+                                                    alt="오!감자" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="br_it">
+                                <button class="br_btn" type="button">
+                                    <span class="br_no">5</span>
+                                    <span class="br_nm">닥터유(에너지바)</span>
+                                </button>
+                                <a class="br_mo" href="#">more+</a>
+
+                                <div class="br_pn">
+                                    <div class="br_pn_in">
+                                        <div class="br_g">
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_5_1.png"
+                                                    alt="닥터유(에너지바)" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_5_2.png"
+                                                    alt="닥터유(에너지바)" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="br_it">
+                                <button class="br_btn" type="button">
+                                    <span class="br_no">6</span>
+                                    <span class="br_nm">고래밥</span>
+                                </button>
+                                <a class="br_mo" href="#">more+</a>
+
+                                <div class="br_pn">
+                                    <div class="br_pn_in">
+                                        <div class="br_g">
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_6_1.png"
+                                                    alt="고래밥" /></a>
+                                            <a class="br_a" href="#"><img class="br_i" src="./img/best_6_2.png"
+                                                    alt="고래밥" /></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="br_rc">
+                        <a class="br_ad" href="#" aria-label="제주용암수 배너">
+                            <img class="br_ad_i" src="./img/jeju_ad.jpg" alt="" />
+                        </a>
+
+                        <div class="br_gr">
+                            <a class="br_bx br_bx_g" href="#" aria-label="이미지 박스 1"></a>
+                            <a class="br_bx br_bx_g" href="#" aria-label="이미지 박스 2"></a>
+                            <a class="br_bx br_bx_g" href="#" aria-label="이미지 박스 3"></a>
+
+                            <a class="br_bx br_bx_t" href="#" aria-label="best rank">
+                                <div class="br_bx_tt">best rank</div>
+                                <div class="br_bx_tx">이주의 과자를 확인하세요</div>
+                            </a>
+
+                            <a class="br_bx br_bx_g" href="#" aria-label="이미지 박스 4"></a>
+                            <a class="br_bx br_bx_g" href="#" aria-label="이미지 박스 5"></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- HISTORY (1200 아님) -->
+        <section class="hs" id="hs">
+            <div class="hs_s">
+                <h2 class="hs_t">시대와 함께한 역사</h2>
+
+                <p class="hs_tex">그때도 지금도, 함께라서 더 맛있는 순간<br />세대를 넘어 이어지는 오리온의 시간</p>
+
+                <div class="hs_p" id="hs_p">
+                    <span class="hs_d" id="hs_d" aria-hidden="true"></span>
+                </div>
+
+                <div class="hs_v" id="hs_v">
+                    <div class="hs_tr" id="hs_tr">
+                        <article class="hi">
+                            <div class="hi_y">1974</div>
+                            <a class="hi_c" href="#">
+                                <img class="hi_i" src="./img/h1974.jpg" alt="초코파이情" />
+                                <div class="hi_b">
+                                    <div class="hi_tt">나눔의 기쁨을 알게 해준 쫀득하고 폭신한 초코파이情</div>
+                                    <div class="hi_tx">시간을 넘어 여전히 마음을 나누는 따뜻한 정(情)</div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="hi">
+                            <div class="hi_y">1976</div>
+                            <a class="hi_c" href="#">
+                                <img class="hi_i" src="./img/h1976.jpg" alt="오징어땅콩" />
+                                <div class="hi_b">
+                                    <div class="hi_tt">아빠랑 나눠먹던 오징어땅콩 50년</div>
+                                    <div class="hi_tx">변함없이 원조의 맛 그대로</div>
+                                </div>
+                            </a>
+                        </article>
+
+                        <article class="hi">
+                            <div class="hi_y">1992</div>
+                            <a class="hi_c" href="#">
+                                <img class="hi_i" src="./img/h1992.jpg" alt="마이구미" />
+                                <div class="hi_b">
+                                    <div class="hi_tt">학교에서 친구들이랑 나눠먹던 마이구미</div>
+                                    <div class="hi_tx">상큼 달콤한 과일 맛으로 기분까지 충전</div>
+                                </div>
+                            </a>
+                        </article>
+                    </div>
+                </div>
+
+                <p class="hs_tex">시간이 흘러도 계속 함께하고 싶은<br />‘오리온 간식’</p>
+            </div>
+        </section>
+
+
+        <!-- EVENT -->
+        <section class="ev" id="ev">
+            <div class="inner">
+                <h2 class="ev_t">진행중인 이벤트</h2>
+
+                <ul class="ev_l">
+                    <li class="ev_it">
+                        <a class="ev_card" href="#" aria-label="이벤트 상세 보기">
+                            <span class="ev_btn" aria-hidden="true">
+                                <span class="ev_ico">
+                                    <i class="bx bx-arrow-up-right-stroke bx-remove-padding"></i>
+                                </span>
+                            </span>
+                        </a>
+                        <p class="ev_tx">[쉘위 클래식 & 쉘위 카카오]<br />신상선발대 모집🤎</p>
+                    </li>
+
+                    <li class="ev_it">
+                        <a class="ev_card" href="#" aria-label="이벤트 상세 보기">
+                            <span class="ev_btn" aria-hidden="true">
+                                <span class="ev_ico">
+                                    <i class="bx bx-arrow-up-right-stroke bx-remove-padding"></i>
+                                </span>
+                            </span>
+                        </a>
+                        <p class="ev_tx">Dr.You제주 용암수로 한복 <br />입은남자의 감동을 더 청량하게✨</p>
+                    </li>
+
+                    <li class="ev_it">
+                        <a class="ev_card" href="#" aria-label="이벤트 상세 보기">
+                            <span class="ev_btn" aria-hidden="true">
+                                <span class="ev_ico">
+                                    <i class="bx bx-arrow-up-right-stroke bx-remove-padding"></i>
+                                </span>
+                            </span>
+                        </a>
+                        <p class="ev_tx">마켓오 브라우니 3종 홈카페<br />레시피 🧑🏻‍🍳✨</p>
+                    </li>
+                </ul>
+
+                <a class="ev_more" href="#">이벤트 관</a>
+            </div>
+        </section>
+
+        <footer class="ft" id="ft">
+
+            <div class="ft_top">
+                <div class="inner">
+                    <a class="ft_logo" href="./index.html" aria-label="ORION 홈">
+                        <img class="ft_logo_img" src="./img/logo_orion.jpg" alt="ORION" />
+                    </a>
+
+                    <div class="ft_top_left">
+                        <p class="ft_info">(주)오리온 서울특별시 중구 을지로 170 (을지로2가 203) 13층</p>
+                        <p class="ft_info">등록번호 709-81-00727 대표이사 이승준</p>
+                        <p class="ft_info">전화번호 02.710.6000</p>
+                        <p class="ft_info">고객센터 080.023.5700(수신자부담)</p>
+                    </div>
+
+                    <nav class="ft_top_right" aria-label="footer top links">
+                        <a class="ft_top_lk" href="#">고객문의</a>
+                        <a class="ft_top_lk" href="#">신규거래제안</a>
+                        <a class="ft_top_lk" href="#">채용</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="ft_bottom">
+                <div class="inner">
+
+                    <div class="ft_bot_left">
+                        <div class="ft_sns">
+                            <a class="ft_sns_a" href="#" aria-label="facebook">
+                                <i class="bxl bx-facebook-circle bx-remove-padding"></i>
+                            </a>
+                            <a class="ft_sns_a" href="#" aria-label="twitter">
+                                <i class="bxl bx-twitter bx-remove-padding"></i>
+                            </a>
+                            <a class="ft_sns_a" href="#" aria-label="instagram">
+                                <i class="bxl bx-instagram-alt bx-remove-padding"></i>
+                            </a>
+                        </div>
+
+                        <p class="ft_copy">COPYRIGHT ORION CORP. ALL RIGHT RESERVED.</p>
+                    </div>
+
+                    <div class="ft_bot_right">
+                        <a class="ft_bot_lk ft_bot_lk_b" href="#">개인정보처리방침</a>
+                        <a class="ft_bot_lk" href="#">법적고지</a>
+                        <a class="ft_bot_lk" href="#">이메일무단수집거부</a>
+                        <a class="ft_bot_lk" href="#">오시는길</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+
+    </div>
+</body>
+
+</html>
