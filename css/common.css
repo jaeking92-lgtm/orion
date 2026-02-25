@@ -49,6 +49,7 @@ textarea {
   margin: 0 auto;
 }
 
+
 .hd_t {
   width: 100%;
   height: 70px;
@@ -293,7 +294,7 @@ textarea {
 }
 
 .hd_ct {
-  font-size: 13px;
+  font-size: 18px;
   font-weight: 800;
   margin-bottom: 12px;
   color: #111;
@@ -305,7 +306,7 @@ textarea {
 
 .hd_lk {
   display: block;
-  font-size: 12px;
+  font-size: 18px;
   color: rgba(0, 0, 0, 0.75);
   padding: 6px 0;
   text-decoration: none;
@@ -509,12 +510,10 @@ textarea {
   border: 0;
   padding: 18px 4px;
   margin: 0;
-
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 600;
   letter-spacing: -0.01em;
   color: #111;
-
   cursor: pointer;
   position: relative;
 }
@@ -678,15 +677,15 @@ textarea {
 
 .mv_tx {
   position: absolute;
-  left: 360px;
-  bottom: 150px;
+  left: 300px;
+  bottom: 80px;
   color: #fff;
   text-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
 }
 
 .mv_tx1 {
   margin: 0;
-  font-size: 32px;
+  font-size: 42px;
   font-weight: 500;
   letter-spacing: -0.02em;
 }
@@ -839,10 +838,13 @@ textarea {
 
 .pd_ar_l {
   left: -25px;
+  z-index: 977;
 }
 
 .pd_ar_r {
   right: -25px;
+  z-index: 978;
+
 }
 
 .pd_ar_ico {
@@ -1181,7 +1183,7 @@ textarea {
 }
 
 .br_bx_tx {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.5;
   color: rgba(0, 0, 0, 0.65);
 }
@@ -1440,8 +1442,8 @@ textarea {
   padding: 12px 22px;
 
   border-radius: 999px;
-  background: #e0e0e0;
-  color: #111;
+  background: #000000;
+  color: #ffffff;
 
   font-size: 14px;
   font-weight: 600;
@@ -1467,6 +1469,8 @@ textarea {
   position: relative;
   box-sizing: border-box;
 }
+
+
 
 .ft_top {
   position: relative;
@@ -1509,6 +1513,7 @@ textarea {
   height: 100%;
   object-fit: cover;
   object-position: center;
+  
 }
 
 .ft_top_left {
@@ -1518,7 +1523,7 @@ textarea {
 
 .ft_info {
   margin: 0;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.55;
   color: rgba(0, 0, 0, 0.78);
 }
@@ -1530,7 +1535,7 @@ textarea {
 }
 
 .ft_top_lk {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
   color: rgba(0, 0, 0, 0.88);
   text-decoration: none;
@@ -1579,7 +1584,7 @@ textarea {
 
 .ft_copy {
   margin: 0;
-  font-size: 10px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.72);
 }
 
@@ -1590,11 +1595,54 @@ textarea {
 }
 
 .ft_bot_lk {
-  font-size: 11px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.78);
   text-decoration: none;
 }
 
 .ft_bot_lk_b {
   font-weight: 600;
+}
+
+/* =========================
+   FIX: HEADER DROPDOWN z-index / overflow
+   - 기존 코드 유지
+   - 드롭다운이 mv(메인비주얼) 등에 가려지는 문제만 해결
+========================= */
+
+/* 헤더 전체를 최상단 레이어로 */
+#hd {
+  position: relative;
+  z-index: 9999;
+}
+
+/* hd_t / hd_nv도 헤더 내부에서 위로 */
+#hd .hd_t,
+#hd .hd_nv {
+  position: relative;
+  z-index: 10000;
+}
+
+/* 드롭다운은 더 위로 + absolute 기준 유지 */
+#hd #hd_dd,
+#hd .hd_dd {
+  position: absolute;     /* 기존 구조 유지 */
+  z-index: 20000;         /* ✅ 가장 중요 */
+}
+
+/* 드롭다운 내부가 잘리면 안 되니까 헤더는 overflow visible */
+#hd {
+  overflow: visible;
+}
+
+/* (가끔) nav 래퍼가 overflow hidden이면 dd가 잘림 → 열어둠 */
+#hd .hd_nv {
+  overflow: visible;
+}
+
+/* 메인비주얼/섹션이 헤더 위로 올라와 덮는 케이스 방지 */
+#mv,
+.mv {
+  position: relative;
+  z-index: 1;
 }

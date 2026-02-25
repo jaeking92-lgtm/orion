@@ -214,7 +214,7 @@
       <div class="mv_inner">
         <img class="mv_bg" src="./img/main_visual.jpg" alt="셸위 이미지" />
         <div class="mv_tx">
-          <p class="mv_tx1">오랜 시간, 변하지 않는 기준<br />세대를 잇는 오리온의 이름</p>
+          <p class="mv_tx1">오랜 시간, 변하지 않는 기준<br>세대를 잇는 오리온의 이름</p>
         </div>
       </div>
     </section>
@@ -223,63 +223,68 @@
     <!-- =========================
       PRODUCT (1720 영역)
     ========================= -->
-    <section class="pd" id="pd">
-      <div class="pd_inner">
+ <section class="pd" id="pd">
+  <div class="pd_inner">
 
-        <div class="pd_hd">
-          <h2 class="pd_t">매일이 새로운 오리온 제품</h2>
-          <a class="pd_more" href="#">more+</a>
-        </div>
+    <div class="pd_hd">
+      <h2 class="pd_t">매일이 새로운 오리온 제품</h2>
+      <a class="pd_more" href="#">more+</a>
+    </div>
 
-        <div class="pd_slider" aria-label="제품 슬라이더">
+    <!-- ✅ 버튼이 고정될 무대 -->
+    <div class="pd_stage">
 
-          <article class="pd_it pd_it_s">
-            <a class="pd_card pd_card_s" href="#">
-              <img class="pd_img" src="./img/pd_1.jpg" alt="마이구미" />
-            </a>
-            <p class="pd_nm">마이구미</p>
-          </article>
+      <!-- ✅ 고정 버튼(슬라이더 밖) -->
+      <button class="pd_ar pd_ar_l" type="button" aria-label="이전">
+        <span class="pd_ar_ico" aria-hidden="true"></span>
+      </button>
 
-          <article class="pd_it pd_it_s">
-            <a class="pd_card pd_card_s" href="#">
-              <img class="pd_img" src="./img/pd_2.jpg" alt="오!감자" />
-            </a>
-            <p class="pd_nm">오!감자</p>
-          </article>
+      <!-- ✅ 움직이는 건 이것만 -->
+      <div class="pd_slider" aria-label="제품 슬라이더">
+        <article class="pd_it pd_it_s">
+          <a class="pd_card pd_card_s" href="#">
+            <img class="pd_img" src="./img/pd_1.jpg" alt="마이구미" />
+          </a>
+          <p class="pd_nm">마이구미</p>
+        </article>
 
-          <article class="pd_it pd_it_m">
-            <button class="pd_ar pd_ar_l" type="button" aria-label="이전">
-              <span class="pd_ar_ico" aria-hidden="true"></span>
-            </button>
+        <article class="pd_it pd_it_s">
+          <a class="pd_card pd_card_s" href="#">
+            <img class="pd_img" src="./img/pd_2.jpg" alt="오!감자" />
+          </a>
+          <p class="pd_nm">오!감자</p>
+        </article>
 
-            <a class="pd_card pd_card_m" href="#">
-              <img class="pd_img" src="./img/pd_3.jpg" alt="초코파이" />
-            </a>
+        <article class="pd_it pd_it_m">
+          <a class="pd_card pd_card_m" href="#">
+            <img class="pd_img" src="./img/pd_3.jpg" alt="초코파이" />
+          </a>
+          <p class="pd_nm">초코파이</p>
+        </article>
 
-            <button class="pd_ar pd_ar_r" type="button" aria-label="다음">
-              <span class="pd_ar_ico" aria-hidden="true"></span>
-            </button>
+        <article class="pd_it pd_it_s">
+          <a class="pd_card pd_card_s" href="#">
+            <img class="pd_img" src="./img/pd_4.jpg" alt="다이제" />
+          </a>
+          <p class="pd_nm">다이제</p>
+        </article>
 
-            <p class="pd_nm">초코파이</p>
-          </article>
-
-          <article class="pd_it pd_it_s">
-            <a class="pd_card pd_card_s" href="#">
-              <img class="pd_img" src="./img/pd_4.jpg" alt="다이제" />
-            </a>
-            <p class="pd_nm">다이제</p>
-          </article>
-
-          <article class="pd_it pd_it_s">
-            <a class="pd_card pd_card_s" href="#">
-              <img class="pd_img" src="./img/pd_5.jpg" alt="포카칩" />
-            </a>
-            <p class="pd_nm">포카칩</p>
-          </article>
-
-        </div>
+        <article class="pd_it pd_it_s">
+          <a class="pd_card pd_card_s" href="#">
+            <img class="pd_img" src="./img/pd_5.jpg" alt="포카칩" />
+          </a>
+          <p class="pd_nm">포카칩</p>
+        </article>
       </div>
-    </section>
+
+      <!-- ✅ 고정 버튼(슬라이더 밖) -->
+      <button class="pd_ar pd_ar_r" type="button" aria-label="다음">
+        <span class="pd_ar_ico" aria-hidden="true"></span>
+      </button>
+
+    </div>
+  </div>
+</section>
 
 
     <!-- BANNER (1200x300) -->
@@ -583,6 +588,7 @@
           <a class="ft_logo" href="./index.html" aria-label="ORION 홈">
             <img class="ft_logo_img" src="./img/logo_orion.jpg" alt="ORION" />
           </a>
+
 
           <div class="ft_top_left">
             <p class="ft_info">(주)오리온 서울특별시 중구 을지로 170 (을지로2가 203) 13층</p>
