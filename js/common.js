@@ -1,7 +1,9 @@
 // js/common.js
 document.addEventListener("DOMContentLoaded", () => {
   /* =========================
-     HEADER dropdown
+     HEADER dropdown (FINAL)
+     - 클래스 통일: hd.isOpen / .hd_it.isOn / .hd_mn.isOn
+     - "먹통" 방지: event delegation + overlay 방지( CSS pointer-events )
   ========================= */
   (() => {
     const hd = document.getElementById("hd");
@@ -14,63 +16,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let curKey = null;
 
-    const setOn = (key) => {
-      curKey = key;
+    const getKey = (el) => el?.getAttribute("data_key");
 
-      its.forEach((it) => it.classList.toggle("isOn", it.getAttribute("data_key") === key));
-      mns.forEach((mn) => mn.classList.toggle("isOn", mn.getAttribute("data_key") === key));
+    const open = (key) => {
+      curKey = key;
 
       hd.classList.add("isOpen");
       dd.setAttribute("aria-hidden", "false");
 
+      its.forEach((it) => it.classList.toggle("isOn", getKey(it) === key));
+      btns.forEach((b) => b.classList.toggle("isOn", getKey(b) === key));
+      mns.forEach((mn) => mn.classList.toggle("isOn", getKey(mn) === key));
+
       btns.forEach((b) => {
-        b.setAttribute("aria-expanded", b.getAttribute("data_key") === key ? "true" : "false");
+        b.setAttribute("aria-expanded", getKey(b) === key ? "true" : "false");
       });
     };
 
     const close = () => {
       curKey = null;
 
-      its.forEach((it) => it.classList.remove("isOn"));
-      mns.forEach((mn) => mn.classList.remove("isOn"));
-
       hd.classList.remove("isOpen");
       dd.setAttribute("aria-hidden", "true");
+
+      its.forEach((it) => it.classList.remove("isOn"));
+      btns.forEach((b) => b.classList.remove("isOn"));
+      mns.forEach((mn) => mn.classList.remove("isOn"));
 
       btns.forEach((b) => b.setAttribute("aria-expanded", "false"));
     };
 
+    /* ✅ hover/focus: 열기 */
     its.forEach((it) => {
-      const key = it.getAttribute("data_key");
-      it.addEventListener("mouseenter", () => setOn(key));
-      it.addEventListener("focusin", () => setOn(key));
+      const key = getKey(it);
+      it.addEventListener("mouseenter", () => open(key));
+      it.addEventListener("focusin", () => open(key));
     });
 
-    btns.forEach((btn) => {
-      const key = btn.getAttribute("data_key");
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-        if (hd.classList.contains("isOpen") && curKey === key) close();
-        else setOn(key);
-      });
+    /* ✅ click: 이벤트 위임(아이콘 <i> 눌러도 버튼으로 인식) */
+    hd.addEventListener("click", (e) => {
+      const btn = e.target.closest(".hd_btn");
+      if (!btn) return;
+
+      e.preventDefault();
+      e.stopPropagation();
+
+      const key = getKey(btn);
+      const alreadyOpen = hd.classList.contains("isOpen") && curKey === key;
+
+      if (alreadyOpen) close();
+      else open(key);
     });
 
-    hd.addEventListener("mouseleave", close);
+    /* ✅ 드롭다운 안 클릭은 닫히지 않게 */
+    dd.addEventListener("click", (e) => e.stopPropagation());
 
-    document.addEventListener("click", (e) => {
-      if (!hd.classList.contains("isOpen")) return;
-      if (!hd.contains(e.target)) close();
+    /* ✅ 바깥 클릭 닫기 */
+    document.addEventListener("click", () => {
+      if (hd.classList.contains("isOpen")) close();
     });
 
+    /* ✅ ESC 닫기 */
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && hd.classList.contains("isOpen")) close();
     });
+
+    /* ✅ 마우스가 헤더 영역 밖으로 나가면 닫기 */
+    hd.addEventListener("mouseleave", close);
   })();
 
-
   /* =========================
-     BEST RANK (1초 자동)
-     - panel class: .br_pn (통일)
+     BEST RANK (1초 자동) - 네 기존 유지
   ========================= */
   (() => {
     const root = document.getElementById("br");
@@ -137,9 +153,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const btn = it.querySelector(".br_btn");
       if (!btn) return;
 
-      btn.addEventListener("click", () => {
-        setOn(i);
-      });
+      btn.addEventListener("click", () => setOn(i));
 
       it.addEventListener("mouseenter", stop);
       it.addEventListener("mouseleave", start);
@@ -148,9 +162,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   })();
 
-
   /* =========================
-     HISTORY (scroll -> horizontal)
+     HISTORY (scroll -> horizontal) - 네 기존 유지
   ========================= */
   (() => {
     const hs = document.getElementById("hs");
@@ -187,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const draw = () => {
       ticking = false;
-
       const p = clamp01((window.scrollY - hsTop) / range);
 
       tr.style.transform = `translate3d(${-p * dist}px, 0, 0)`;
